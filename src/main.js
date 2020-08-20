@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import br_header from './components/br_head.vue';
+Vue.use(br_header);
 
 Vue.use(ElementUI);
 

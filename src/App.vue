@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    
+ 
     <!--<router-view/>-->
-
+    
     <el-container>
-      <el-header id="header" height="200px">Header</el-header>
+      <el-header id="header" height="200px">
+        <Br_head> </Br_head>
+      </el-header>
       <el-container>
         <el-aside id="Left_aside" width="25%">
           Left_Aside
@@ -18,12 +20,24 @@
       </el-container>
     </el-container>
 
+     
+
   </div>
 </template>
 
+
+
 <script>
+import br_head from './components/br_head.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+
+  components:
+  {
+      Br_head: br_head
+  }
+
 }
 </script>
 
@@ -42,7 +56,7 @@ export default {
 {
    background-image: url("./assets/logo.png");
    background-repeat: no-repeat;
-   background-position: center;
+   background-position: left;
 
 }
 #Left_aside
