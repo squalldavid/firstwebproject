@@ -4,16 +4,17 @@
     <!--<router-view/>-->
     
     <el-container>
-      <el-header id="header" height="200px">
+      <el-header id="myheader" height="200px">
         <Br_head> </Br_head>
       </el-header>
       <el-container>
         <el-aside id="Left_aside" width="25%">
           Left_Aside
+          
+       <!--   <img src="./assets/logo.png" alt="">
           <img src="./assets/logo.png" alt="">
           <img src="./assets/logo.png" alt="">
-          <img src="./assets/logo.png" alt="">
-          <img src="./assets/logo.png" alt="">
+          <img src="./assets/logo.png" alt="">-->
         </el-aside>
         <el-main>Main</el-main>
         <el-aside id="Right_aside" width="25%">Right_Aside</el-aside>
@@ -52,13 +53,12 @@ export default {
   padding: 0px;
   border: 0px;
 }
-#header
-{
-   background-image: url("./assets/logo.png");
-   background-repeat: no-repeat;
-   background-position: left;
 
+#myheader{
+  //float:left;
+  padding: 0px
 }
+
 #Left_aside
 {
   background-color: coral;
