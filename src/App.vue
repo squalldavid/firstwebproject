@@ -1,24 +1,16 @@
 <template>
   <div id="app">
  
-   
+   {{testmsg}}
     
     <el-container>
       <el-header id="myheader" height="200px">
         <Br_head> </Br_head>
       </el-header>
     </el-container>
-       <router-view/>
 
-      <!-- <el-container>
-        <el-aside id="Left_aside" width="25%">
-          Left_Aside
-        
-        </el-aside>
-        <el-main>Main</el-main>
-        <el-aside id="Right_aside" width="25%">Right_Aside</el-aside>
-      </el-container>
-    </el-container> -->
+    <NavBar :MenuItems="menuInfo"></NavBar>
+    <router-view/>
 
      
 
@@ -29,13 +21,28 @@
 
 <script>
 import br_head from './components/br_head.vue'
-
+import nav_bar from "./components/navbar.vue"
 export default {
   name: 'App',
 
   components:
   {
-      Br_head: br_head
+      Br_head: br_head,
+      NavBar: nav_bar
+  },
+
+  data()
+    {
+    return{
+      testmsg: "Hello world!",
+      menuInfo:[
+          {id:1, name: "Front Page"},
+          {id:2, name: "Finance"},
+          {id:3, name: "Politics"},
+          {id:4, name: "Sports"}
+      ]      
+    }
+    
   }
 
 }

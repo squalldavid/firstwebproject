@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NavBar :MenuItems="menuInfo"></NavBar>
+        
 
 
       <el-container>
@@ -16,22 +16,17 @@
 </template>
 
 <script>
-import nav_bar from "./navbar.vue"
+
 
 export default {
 
     components:
     {
-        NavBar: nav_bar
+        
     },
     data(){
         return{
-            menuInfo:[
-                {id:1, name: "Front Page"},
-                {id:2, name: "Finance"},
-                {id:3, name: "Politics"},
-                {id:4, name: "Sports"}
-            ]
+
             
         }
     }
