@@ -1,25 +1,24 @@
 <template>
   <div id="app">
  
-    <!--<router-view/>-->
+   
     
     <el-container>
       <el-header id="myheader" height="200px">
         <Br_head> </Br_head>
       </el-header>
-      <el-container>
+    </el-container>
+       <router-view/>
+
+      <!-- <el-container>
         <el-aside id="Left_aside" width="25%">
           Left_Aside
-          
-       <!--   <img src="./assets/logo.png" alt="">
-          <img src="./assets/logo.png" alt="">
-          <img src="./assets/logo.png" alt="">
-          <img src="./assets/logo.png" alt="">-->
+        
         </el-aside>
         <el-main>Main</el-main>
         <el-aside id="Right_aside" width="25%">Right_Aside</el-aside>
       </el-container>
-    </el-container>
+    </el-container> -->
 
      
 
