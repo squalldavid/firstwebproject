@@ -1,7 +1,7 @@
 <template>
   <div id="app">
  
-   {{testmsg}}
+   <!-- {{StockQuote}} -->
     
     <el-container>
       <el-header id="myheader" height="200px">
@@ -10,7 +10,9 @@
     </el-container>
 
     <NavBar :MenuItems="menuInfo"></NavBar>
-    <router-view/>
+
+    <!-- <MainPage :myInfo="StockQuote"></MainPage> -->
+    <router-view/> 
 
      
 
@@ -22,28 +24,33 @@
 <script>
 import br_head from './components/br_head.vue'
 import nav_bar from "./components/navbar.vue"
+import myAxios from 'axios'
+import myPage  from './components/HelloWorld.vue'
 export default {
   name: 'App',
 
   components:
   {
       Br_head: br_head,
-      NavBar: nav_bar
+      NavBar: nav_bar,
+      MainPage: myPage
   },
 
   data()
     {
-    return{
-      testmsg: "Hello world!",
-      menuInfo:[
-          {id:1, name: "Front Page"},
-          {id:2, name: "Finance"},
-          {id:3, name: "Politics"},
-          {id:4, name: "Sports"}
-      ]      
-    }
+      return{
+        testmsg: "Hello world!",
+        menuInfo:[
+            {id:1, name: "Front Page"},
+            {id:2, name: "Finance"},
+            {id:3, name: "Politics"},
+            {id:4, name: "Sports"}
+        ],
+        StockQuote:[]      
+      }
     
-  }
+    }
+
 
 }
 </script>
