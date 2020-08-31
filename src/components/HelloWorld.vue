@@ -46,15 +46,54 @@ export default {
     data(){
         return{
 
-            newsInfo:[]
+            newsInfo:[],
+            timerId:'',
+            value:0
         }
     },
-  mounted() {
-    myAxios.get("https://quote.cnbc.com/quote-html-webservice/quote.htm?noform=1&partnerId=2&fund=1&exthrs=0&output=json&symbols=@DJ.1|@SP.1|@ND.1|@CL.1|US10Y&requestMethod=quick")
-           .then( res=>(  this.newsInfo = res.data
+    method:
+    {
+       getData()
+       {
+         this.value += 11 ;
+         console.log(this.value);
+       }
+    },
+    mounted() {
+     
+      myAxios.get("https://quote.cnbc.com/quote-html-webservice/quote.htm?noform=1&partnerId=2&fund=1&exthrs=0&output=json&symbols=@DJ.1|@SP.1|@ND.1|@CL.1|US10Y&requestMethod=quick")
+            .then( res=>(  this.newsInfo = res.data
 
-    ))    
-  }    
+      )) ; 
+
+      clearInterval(this.timerId)
+      this.timerId = window.setInterval(function(){
+        
+        // this.value ++ ;  
+        // console.log(this.value);
+
+        myAxios.get("https://quote.cnbc.com/quote-html-webservice/quote.htm?noform=1&partnerId=2&fund=1&exthrs=0&output=json&symbols=@DJ.1|@SP.1|@ND.1|@CL.1|US10Y&requestMethod=quick")
+        .then( res=>(  this.newsInfo = res.data
+
+        )) ; 
+
+       // alert(this.newsInfo.QuickQuoteResult.QuickQuote[0].responseTime);
+
+      },5000);
+      
+    },
+    created()
+    {
+
+    },
+    beforeMount()
+    {
+
+    },
+    beforeDestroy() {
+      clearInterval(this.timerId);
+      this.timerId = null;
+    } 
 }
 </script>
 

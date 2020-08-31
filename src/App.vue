@@ -24,7 +24,7 @@
 <script>
 import br_head from './components/br_head.vue'
 import nav_bar from "./components/navbar.vue"
-import myAxios from 'axios'
+
 import myPage  from './components/HelloWorld.vue'
 export default {
   name: 'App',
@@ -33,7 +33,9 @@ export default {
   {
       Br_head: br_head,
       NavBar: nav_bar,
-      MainPage: myPage
+      MainPage: myPage,
+      timerID:''
+      
   },
 
   data()
@@ -46,10 +48,24 @@ export default {
             {id:3, name: "Politics"},
             {id:4, name: "Sports"}
         ],
-        StockQuote:[]      
+        StockQuote:[],
+        value:0      
       }
     
-    }
+    },
+  methods:
+  {
+    // // getData()
+    // // {
+    // //   this.value ++ ;
+    // //   console.log(this.value); 
+    // // }
+  }
+  // mounted()
+  // {
+  //     clearInterval(this.timerId)
+  //     this.timerId = window.setInterval(this.getData,1000);
+  // }
 
 
 }
