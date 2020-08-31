@@ -14,8 +14,9 @@
 
                <!-- {{newsInfo}} -->
                <ul>
-                  <li v-for="data in newsInfo.QuickQuoteResult.QuickQuote" :key="data.symbol">
-                      {{data.name}}: <b> {{data.settlePrice}}</b> {{data.responseTime}}
+                  <li v-for="(data , index) in newsInfo" :key="index">
+                      {{data.name}}: {{data.settlePrice}}<b> {{data.responseTime}}</b>
+                      <!-- <SingleNewsInfoComponent ></SingleNewsInfoComponent> -->
                   </li>
 
                </ul>
@@ -29,6 +30,7 @@
 
 <script>
 import myAxios from 'axios'
+import SingleNewsInfo from './SingleNews.vue'
 
 export default {
     
@@ -41,7 +43,7 @@ export default {
     },
     components:
     {
-        
+        SingleNewsInfoComponent:SingleNewsInfo
     },
     data(){
         return{
@@ -62,7 +64,7 @@ export default {
     mounted() {
      
       myAxios.get("https://quote.cnbc.com/quote-html-webservice/quote.htm?noform=1&partnerId=2&fund=1&exthrs=0&output=json&symbols=@DJ.1|@SP.1|@ND.1|@CL.1|US10Y&requestMethod=quick")
-            .then( res=>(  this.newsInfo = res.data
+            .then( res=>(  this.newsInfo = res.data.QuickQuoteResult.QuickQuote
 
       )) ; 
 
@@ -73,13 +75,23 @@ export default {
         // console.log(this.value);
 
         myAxios.get("https://quote.cnbc.com/quote-html-webservice/quote.htm?noform=1&partnerId=2&fund=1&exthrs=0&output=json&symbols=@DJ.1|@SP.1|@ND.1|@CL.1|US10Y&requestMethod=quick")
-        .then( res=>(  this.newsInfo = res.data
+        .then( res=>(  this.newsInfo = res.data.QuickQuoteResult.QuickQuote
 
         )) ; 
 
-       // alert(this.newsInfo.QuickQuoteResult.QuickQuote[0].responseTime);
 
-      },5000);
+
+       alert(this.newsInfo[0].responseTime );
+     
+        var tmp = this.newsInfo[0] ;
+
+        this.newsInfo.push(tmp) ;
+        this.newsInfo.pop() ;
+
+        
+      },2000);
+
+      
       
     },
     created()
