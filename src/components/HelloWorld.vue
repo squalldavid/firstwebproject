@@ -68,7 +68,7 @@ export default {
             //console.log( "newsInfo", this.newsInfo);
             //console.log( "tmpNewsInfo", this.tmpNewsInfo);
             this.newsInfo.push(this.newsInfo[0]);
-            this.newsInfo.pos();
+            this.newsInfo.pop();
             //this.newsInfo = this.newsInfo.concat(this.tmpNewsInfo) ;
 
 
