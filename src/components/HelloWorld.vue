@@ -21,7 +21,7 @@
                   </li>
                </ul> -->
 
-               <div v-for="(data , index) in newsInfo" :key="index">
+               <div class="news" v-for="(data , index) in newsInfo" :key="index">
                     <SingleNewsInfoComponent :content="data" :newsType="true" ></SingleNewsInfoComponent>
                </div>
 
@@ -127,5 +127,13 @@ export default {
   background-color: blue;
 
 }
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 100px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 
 </style>
