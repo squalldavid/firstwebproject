@@ -14,12 +14,16 @@
 
                <!-- {{newsInfo}} -->
                
-               <ul>
+               <!-- <ul>
                   <li v-for="(data , index) in newsInfo" :key="index">
                       {{data.name}}: {{data.settlePrice}}<b> {{data.responseTime}}</b>
-                      <!-- <SingleNewsInfoComponent ></SingleNewsInfoComponent> -->
+
                   </li>
-               </ul>
+               </ul> -->
+
+               <div v-for="(data , index) in newsInfo" :key="index">
+                    <SingleNewsInfoComponent :content="data" :newsType="true" ></SingleNewsInfoComponent>
+               </div>
 
             </el-main>
             <el-aside id="Right_aside" width="25%">Right_Aside</el-aside>
