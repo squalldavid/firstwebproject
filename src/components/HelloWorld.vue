@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mainpart">
         
 
 
@@ -116,7 +116,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.mainpart
+{
+    margin:0px;
+    padding: 0px;
+}
 #Left_aside
 {
   background-color: coral;

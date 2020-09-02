@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="menuBar">
     <el-menu
         :default-active="activeIndex2"
         class="el-menu-demo"
@@ -46,3 +46,12 @@ export default {
 
 }
 </script>
+
+<style scoped>
+.menuBar
+{
+    margin:0px;
+    padding:0px;
+}
+
+</style>
